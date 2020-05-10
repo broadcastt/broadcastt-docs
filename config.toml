@@ -1,0 +1,7 @@
+baseURL = "//docs.broadcastt.xyz/"
+languageCode = "en-us"
+title = "Broadcastt Docs"
+
+[outputs]
+  home     = ["HTML"]
+  section  = ["HTML"]

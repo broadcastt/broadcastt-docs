@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ .Site.Author.name }}">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="keywords" content="{{ .Site.Params.keywords }}">
+    {{ hugo.Generator }}
+    <meta itemprop="name" content="{{ .Site.Title }}">
+    <meta itemprop="description" content="{{ .Summary }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ .Scratch.Get "description" }}">
+    <meta property="og:url" content="{{ .Permalink | absURL }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" href="{{ "favicon-64x64.png" | absURL }}" sizes="64x64">
+    <link rel="icon" type="image/png" href="{{ "favicon-32x32.png" | absURL }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ "favicon-16x16.png" | absURL }}" sizes="16x16">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    {{ if .IsHome -}}
+        <title>{{ .Site.Title }}</title>
+    {{- else -}}
+        <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{- end }}
+    {{ template "_internal/twitter_cards.html" . }}
+</head>
+<body>
+    <div class="main container">
+        {{ block "main" . }}{{ end }}
+    </div>
+</body>
+</html>

@@ -20,7 +20,9 @@
     <link rel="icon" type="image/png" href="{{ "favicon-32x32.png" | absURL }}" sizes="32x32">
     <link rel="icon" type="image/png" href="{{ "favicon-16x16.png" | absURL }}" sizes="16x16">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ (resources.Get "app.css").Permalink }}">
+    {{/*    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"*/}}
+    {{/*          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">*/}}
 
     {{ if .IsHome -}}
         <title>{{ .Site.Title }}</title>
@@ -29,9 +31,34 @@
     {{- end }}
     {{ template "_internal/twitter_cards.html" . }}
 </head>
-<body>
-    <div class="main container">
-        {{ block "main" . }}{{ end }}
+<body class="mdc-typography bg-white m-3">
+    <div class="container">
+        <div class="row">
+            <nav class="col-md-3">
+                <div class="card-shape-container mdc-shape-container d-block">
+                    <div class="mdc-card mdc-card--outlined">
+                        <h1 class="mdc-typography--headline3">
+                            Broadcast<span class="text-primary">t</span>
+                        </h1>
+                        {{ partial "sidebar" . }}
+                    </div>
+                </div>
+            </nav>
+            <div class="col">
+                <div class="card-shape-container mdc-shape-container d-block">
+                    <div class="mdc-card mdc-card--outlined">
+                        <div class="py-2 px-3">
+                            <h2 class="mdc-typography--headline4">
+                                {{ .Title }}
+                            </h2>
+                            <div class="mdc-typography--body1">
+                                {{ block "main" . }}{{ end }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

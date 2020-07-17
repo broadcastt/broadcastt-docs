@@ -4,7 +4,7 @@ The content of this is deployed to [Broadcastt Documentation Page](https://docs.
 
 Any change on master automatically deploys the documentation to the site.
 
-[HUGO](https://gohugo.io/) is used for generating the static files and [Dokku](http://dokku.viewdocs.io/dokku/) is used ofr the easy deployment.
+[HUGO](https://gohugo.io/) is used for generating the static files and [Dokku](http://dokku.viewdocs.io/dokku/) is used for the deployment.
 
 ## Contributing
 

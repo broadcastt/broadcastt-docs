@@ -23,9 +23,9 @@ HTTP status codes are used to indicate the status of the request.
 | 404 | Not found. |
 | 413 | Request Entity Too Large. |
 
-### Events
+## Events
 
-#### POST event
+### POST event
 
 Triggers an event on channels.
 
@@ -42,7 +42,7 @@ Request data
 | channels | true | Array of channel names. *Limited to 100 channels.* |
 | socket_id | false | Exclude a connection from the targets of the event. |
 
-#### POST events
+### POST events
 
 Triggers events on channels.
 
@@ -61,7 +61,7 @@ Event data
 | channel | true | A single channel name. *Limited to 100 channels.* |
 | socket_id | false | Exclude a connection from the targets of the event. |
 
-### Authentication
+## Authentication
 
 Query params
 
@@ -73,7 +73,7 @@ Query params
 | body_md5 | For POST requests | This parameter must contain the hexadecimal MD5 hash of the body. |
 | auth_signature | true | [Authentication signature](#authentication-signature) |
 
-#### Authentication signature
+### Authentication signature
 
 The signature is a HMAC SHA256 hex digest.
 

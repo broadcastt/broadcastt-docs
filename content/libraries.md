@@ -7,7 +7,7 @@ menu:
 ---
 To be able to sending and receiving messages you have to have an implementation of our WebSocket protocol and Rest API.
 
-### Official client libraries
+## Official client libraries
 
 | Library      | Status         | Code and Docs |
 | ------------ | -------------- | ------------- |
@@ -15,7 +15,7 @@ To be able to sending and receiving messages you have to have an implementation 
 | iOS: Swift   | Soon           |               |
 | JavaScript   | In development | [GitHub](https://github.com/broadcastt/broadcastt-js) |
 
-### Official server libraries
+## Official server libraries
 
 | Library     | Status         | Code and Docs |
 | ----------- | -------------- | ------------- |

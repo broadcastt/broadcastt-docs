@@ -14,7 +14,8 @@ The authentication occurs via a HTTP Request to a configurable authentication ur
 
 > Private channel requires authorisation
 
-### Events
+## Events
+
 * Subscribe
 * Unsubscribe
 * Listen

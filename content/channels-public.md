@@ -8,7 +8,8 @@ menu:
 ---
 Public channels do not require authorisation. Anyone can access which means you can share any public information.
 
-### Events
+## Events
+
 * Subscribe
 * Unsubscribe
 * Listen

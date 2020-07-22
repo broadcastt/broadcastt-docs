@@ -16,11 +16,13 @@ Browser compatibility ([source](https://en.wikipedia.org/wiki/WebSocket#Browser_
 | ----------------- | -------------- | ----------------- | --------------------- | ------------------- | ----------------- | ------------------ | --------------- |
 | RFC 6455          | December, 2011 | 10                | 11                    | 16                  | 6                 | 12.10              | 4.4             |
 
-### Connection
+## Connection
 
 ```
 [scheme]://[cluster].broadcastt.xyz:[port]/app/[key]
 ```
+
+### Options
 
 #### `scheme`
 
@@ -39,15 +41,15 @@ Default WebSocket ports are `80` for ws and `443` for wss connections
 
 The key of your application
 
-### Data messages
+## Data messages
 
 Data is sent bidirectionally over a WebSocket as text data containing UTF8 encoded JSON.
 
-### Ping and pong messages
+## Ping and pong messages
 
 [RFC 6455](https://tools.ietf.org/html/rfc6455) natively supports [Ping](https://tools.ietf.org/html/rfc6455#section-5.5.2) and [Pong](https://tools.ietf.org/html/rfc6455#section-5.5.2) frames. These frames helps determine if the connection lost.
 
-### Connection closure
+## Connection closure
 
 Clients may close the WebSocket connection at any time.
 

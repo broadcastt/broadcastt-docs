@@ -16,7 +16,8 @@ Presence channels can be used for any kind of application which requires the cli
 
 > Presence channel requires authorisation
 
-### Events
+## Events
+
 * Subscribe
 * Unsubscribe
 * Joining

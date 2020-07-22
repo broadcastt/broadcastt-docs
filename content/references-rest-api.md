@@ -6,13 +6,13 @@ menu:
         parent: References
         weight: 20
 ---
-The API is hosted at `http://CLUSTER.broadcastt.xyz`, where CLUSTER is replaced with your own apps cluster. The API may be accessed via HTTP or HTTPS.
+The API hosted at `http://CLUSTER.broadcastt.xyz`, where CLUSTER represents your own apps cluster. The API can be accessed via HTTP or HTTPS. However, we recommend to use HTTPS.
 
-All request must be authenticated. Read about it [here](#authentication).
+All request described here must be authenticated. Read about it [here](#authentication).
 
 For POST methods [authentication](#authentication) parameters must be query parameters. Request data must be in POST body as a JSON hash.
 
-HTTP status codes are used to indicate the status of the request.
+To indicate the status of the request the following HTTP status codes are in use:
 
 | Code | Description |
 | - | - |

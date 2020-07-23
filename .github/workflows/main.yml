@@ -19,3 +19,4 @@ jobs:
           PUBLIC_KEY: ''
           HOST: broadcastt.xyz
           PROJECT: docs
+          FORCE_DEPLOY: true

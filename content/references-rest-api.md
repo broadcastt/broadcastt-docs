@@ -65,38 +65,31 @@ Event data
 
 ### GET channel
 
-Channel writes a JSON object to the response with information about the
-requested channel's occupation. 
+Channel endpoint can be used to retrieve information about a specific channel.
 
 ```
 /apps/<id>/channel/<name>
 ```
 
-#####Request
+#### Request
 
 | Parameter | Required | Description |
 | - | - | - |
 | info | false | User count and subscription count attributes can be requested |
 
-Info attributes
+##### Info attributes
 
 | Attribute | Type | Restrictions | Description |
-| - | - | - |
+| - | - | - | - |
 | user_count | int | only valid to presence channels | The requested channel's user count |
 | subscription_count | int | - | The requested channel's subscription count |
 
-```
-Example request:
-
-GET /apps/1/channel/presence-test/info=user_count,subscription_count
-```
-
-#####Response
+#### Response
 
 A successful response contains a JSON object. 
 The response optionally contains user count and subscription count attributes if requested.
 
-The response is error (400: Bad request) if the query contains invalid attributes.
+It returns 400 Bad request as a response if the query contains invalid attributes. The response body of an error contains detailed information.
 It is invalid to request the user_count attribute for non-presence channels.
 
 ```
@@ -111,39 +104,32 @@ Example response:
 
 ### GET channels
 
-Channels writes a JSON object to the response with information about the 
-channels.
+Channels endpoint can be used to retrieve information about channels.
 
 ```
 /apps/<id>/channels
 ```
 
-#####Request
+#### Request
 
 | Parameter | Required | Description |
 | - | - | - |
 | filter_by_prefix | false | Channels can be filtered by prefix |
 | info | false | User count attribute can be requested |
 
-Info attributes
+##### Info attributes
 
 | Attribute | Type | Restrictions | Description |
-| - | - | - |
+| - | - | - | - |
 | user_count | int | only valid to presence channels | The requested channels' user count |
 
-```
-Example request:
-
-GET /apps/1/channels/filter_by_prefix=presence-&info=user_count
-```
-
-#####Response
+#### Response
 
 A successful response contains a JSON object. 
 The response optionally contains presence channels' user count if the user_count attribute is requested
 and only presence channels are filtered.
 
-The response is error (400: Bad request) if the query contains invalid attributes.
+It returns 400 Bad request as a response if the query contains invalid attributes. The response body of an error contains detailed information.
 It is invalid to request the user_count attribute for non-presence channels.
 
 ```

@@ -61,6 +61,93 @@ Event data
 | channel | true | A single channel name. *Limited to 100 channels.* |
 | socket_id | false | Exclude a connection from the targets of the event. |
 
+## Channels
+
+### GET channel
+
+Channel endpoint can be used to retrieve information about a specific channel.
+
+```
+/apps/<id>/channel/<name>
+```
+
+#### Request
+
+| Parameter | Required | Description |
+| - | - | - |
+| info | false | User count and subscription count attributes can be requested |
+
+##### Info attributes
+
+| Attribute | Type | Restrictions | Description |
+| - | - | - | - |
+| user_count | int | only valid to presence channels | The requested channel's user count |
+| subscription_count | int | - | The requested channel's subscription count |
+
+#### Response
+
+A successful response contains a JSON object. 
+The response optionally contains user count and subscription count attributes if requested.
+
+It returns 400 Bad request as a response if the query contains invalid attributes. The response body of an error contains detailed information.
+It is invalid to request the user_count attribute for non-presence channels.
+
+```
+Example response:
+
+{
+    "occupied":true,
+    "user_count":1,
+    "subscription_count":1
+}
+```
+
+### GET channels
+
+Channels endpoint can be used to retrieve information about channels.
+
+```
+/apps/<id>/channels
+```
+
+#### Request
+
+| Parameter | Required | Description |
+| - | - | - |
+| filter_by_prefix | false | Channels can be filtered by prefix |
+| info | false | User count attribute can be requested |
+
+##### Info attributes
+
+| Attribute | Type | Restrictions | Description |
+| - | - | - | - |
+| user_count | int | only valid to presence channels | The requested channels' user count |
+
+#### Response
+
+A successful response contains a JSON object. 
+The response optionally contains presence channels' user count if the user_count attribute is requested
+and only presence channels are filtered.
+
+It returns 400 Bad request as a response if the query contains invalid attributes. The response body of an error contains detailed information.
+It is invalid to request the user_count attribute for non-presence channels.
+
+```
+Example response:
+
+{
+  "channels": {
+    "presence-test": {
+      "user_count":1
+    },
+    "presence-test2": {
+      "user_count":1
+    }
+  }
+}
+```
+
+
 ## Authentication
 
 Query params

@@ -147,6 +147,38 @@ Example response:
 }
 ```
 
+## Users
+
+### GET users
+
+Users endpoint can be used to retrieve users' ids who are subscribed to a specific presence channel.
+
+```
+/apps/<id>/channels/<name>/users
+```
+
+#### Request
+
+Get users is a plain request so there isn't any additional parameters.
+The request is only valid to presence channels.
+
+#### Response
+
+A successful response contains a JSON object. The JSON contains a list of user ids. 
+It returns an empty list if the channel name is currently unoccupied.
+
+It returns 400 Bad request as a response if the requested channel is a non-presence channel.
+
+```
+Example response:
+{
+  "users": [
+    { "id": "1" },
+    { "id": "2" }
+  ]
+}
+```
+
 
 ## Authentication
 
